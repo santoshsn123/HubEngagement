@@ -1,0 +1,9 @@
+<p>camel-case works!</p>
+
+<br>
+<input type="text" name="" [formControl]="camelcaseForm" class="form-control" id="">
+
+Without Space : {{camelcaseForm.value | camelCase:'withoutspace'}} <br>
+For _ (Underscore) : {{camelcaseForm.value | camelCase:'_'}} <br>
+For - (Hyphen) : {{camelcaseForm.value | camelCase:'-'}} <br>
+Normal : {{camelcaseForm.value | camelCase }} <br>

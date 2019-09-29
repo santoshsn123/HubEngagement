@@ -1,0 +1,38 @@
+
+<div>
+        <form [formGroup]="profileForm" >
+        <div class="form-group">
+            <label for="fname">First Name:</label>
+            <input type="text"  formControlName="firstName" class="form-control" id="fname">
+            <div
+                  class="alert alert-danger"
+                  *ngIf="submitted && f.firstName.errors"
+                >Please Enter First Name
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text"  formControlName="email" class="form-control" id="email">
+            <div
+            class="alert alert-danger"
+                  *ngIf="submitted && f.email.errors"
+                >
+                  <span *ngIf="f.email.errors.required"
+                    >Please Enter Email</span
+                  >
+                  <span *ngIf="f.email.errors.email"
+                    >Please Enter Valid Email</span
+                  >
+                </div>
+        </div>
+        <div class="form-group">
+            <label for="skills">Skills:</label>
+            <input type="text"  formControlName="skills" class="form-control" (keyup.enter)="seetheValue()" id="skills" >
+            <span class="badge badge-primary leftSpace" *ngFor="let skill of chipsArray">{{skill}} </span>
+        </div>
+            
+<button type="button" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+</form>
+            
+</div>
+    
