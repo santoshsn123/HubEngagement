@@ -7,18 +7,18 @@ import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
   styleUrls: ['./reactive-form.component.css']
 })
 export class ReactiveFormComponent implements OnInit {
-  profileForm;
+  reactiveForm;
   chipsArray=[];
   submitted:boolean=false;
   constructor(private formbuilder:FormBuilder) { 
-    this.profileForm = this.formbuilder.group({
+    this.reactiveForm = this.formbuilder.group({
       firstName: ['',Validators.required],
       email: ['',[Validators.required,Validators.email]],
       skills: [''],
     })
   }
   get f(){
-    return this.profileForm.controls;
+    return this.reactiveForm.controls;
   }
 
   ngOnInit() {
@@ -26,14 +26,13 @@ export class ReactiveFormComponent implements OnInit {
 
   onSubmit=()=> {
     this.submitted = true;
-    if (this.profileForm.invalid) {
+    if (this.reactiveForm.invalid) {
       return;
     }
-    alert("First Name : "+this.profileForm.value.firstName+"\n Email : "+this.profileForm.value.email+"\n Skills : "+this.chipsArray)
-    
+    alert("First Name : "+this.reactiveForm.value.firstName+"\n Email : "+this.reactiveForm.value.email+"\n Skills : "+this.chipsArray);
   }
   seetheValue =()=>{
-    this.chipsArray.push(this.profileForm.value.skills);
-    this.profileForm.controls.skills.reset();
+    this.chipsArray.push(this.reactiveForm.value.skills);
+    this.reactiveForm.controls.skills.reset();
   }
 }
