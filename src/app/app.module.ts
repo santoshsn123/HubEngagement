@@ -9,13 +9,15 @@ import { CamelCasePipe } from './pipes/camel-case.pipe';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { SkillsComponent } from './skills/skills.component';
 @NgModule({
   declarations: [
     AppComponent,
     CamelCaseComponent,
     LeftPamelComponent,
     CamelCasePipe,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    SkillsComponent
   ],
   imports: [
     BrowserModule,

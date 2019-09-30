@@ -14,7 +14,7 @@ export class ReactiveFormComponent implements OnInit {
     this.reactiveForm = this.formbuilder.group({
       firstName: ['',Validators.required],
       email: ['',[Validators.required,Validators.email]],
-      skills: [''],
+      skills: ['',Validators.required],
     })
   }
   get f(){
@@ -29,8 +29,9 @@ export class ReactiveFormComponent implements OnInit {
     if (this.reactiveForm.invalid) {
       return;
     }
-    alert("First Name : "+this.reactiveForm.value.firstName+"\n Email : "+this.reactiveForm.value.email+"\n Skills : "+this.chipsArray);
+    alert("First Name : "+this.reactiveForm.value.firstName+"\n Email : "+this.reactiveForm.value.email+"\n Skills : "+this.reactiveForm.value.skills);
   }
+  
   seetheValue =()=>{
     this.chipsArray.push(this.reactiveForm.value.skills);
     this.reactiveForm.controls.skills.reset();
