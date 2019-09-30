@@ -1,2 +1,2 @@
-<input type="text"  [formControl]="skillsForm"  placeholder="{{_placeholder}}"   class="form-control" (keyup.enter)="enterTheValue()" id="skills" >
+<input type="text"  [formControl]="skillsForm"  placeholder="{{_placeholder}}"   class="form-control" (keyup.enter)="enterTheValue()" [id]="id" >
 <span class="badge badge-primary leftSpace" *ngFor="let skill of chipsArray">{{skill}} <a href="javascript:void(0)" (click)="removeSkill(skill)" > X</a> </span>

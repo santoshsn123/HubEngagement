@@ -27,7 +27,7 @@
         </div>
         <div class="form-group">
             <label for="skills">Skills:</label>
-            <app-skills  placeholder="Please Add skill and press enter button"  formControlName="skills" value="something"></app-skills>
+            <app-skills  id="skills" placeholder="Please Add skill and press enter button"  formControlName="skills" value="something"></app-skills>
             <div
                   class="alert alert-danger"
                   *ngIf="submitted && f.skills.errors"

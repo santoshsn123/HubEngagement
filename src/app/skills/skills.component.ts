@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,forwardRef } from '@angular/core';
+import { Component, OnInit, Input,forwardRef, HostBinding } from '@angular/core';
 import { NG_VALUE_ACCESSOR, ControlValueAccessor, FormControl } from '@angular/forms';
 
 @Component({
@@ -22,6 +22,8 @@ export class SkillsComponent implements ControlValueAccessor {
     this._ID = value;
     this.externalId = null;
   }
+  @HostBinding('attr.id')
+  
   registerOnChange(fn) {
     this.onChange = fn;
   }
